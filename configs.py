@@ -28,15 +28,15 @@ class Config(object):
 
     ABOUT_HELP_TEXT = """<b>👨‍💻 Developer : <a href='https://t.me/RoyalKrrishna'>@RoyalKrrishna</a>
 
-If You Want To Your Own Bot Like This Then You Can Contact Our Developer.</b>
+If You Want Your Own Bot Like This Then You Can Contact Our Developer.</b>
 """
 
     HOME_TEXT = """
 <b>Hey! {}😅,
 
-I'm <a href='https://t.me/MdiskSearchRobot'>Mdisk Search Robot. 🤖</a>
+I'm Mdisk Search Robot.🤖</a>
 
-I Can Search All Movies And You Can Watch It Online Or Download Easily.🍿
+I Can Search!🔍 What You Want?😜
 
 <a>Made With ❤ By @RoyalKrrishna</a></b>
 """
@@ -45,9 +45,9 @@ I Can Search All Movies And You Can Watch It Online Or Download Easily.🍿
     START_MSG = """
 <b>Hey! {}😅,
 
-I'm <a href='https://t.me/MdiskSearchRobot'>Mdisk Search Robot. 🤖</a>
+I'm Mdisk Search Robot.🤖</a>
 
-I Can Search All Movies And You Can Watch It Online Or Download Easily.🍿
+I Can Search!🔍 What You Want?😜
 
 <a>Made With ❤ By @RoyalKrrishna</a></b>
 """

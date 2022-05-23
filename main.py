@@ -28,7 +28,7 @@ async def start_handler(_, event: Message):
 
     await event.reply_text(Config.START_MSG.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Search Here 🔍", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")],
+            [InlineKeyboardButton("Search Your Movie Here 🔍", switch_inline_query_current_chat="")],
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
             [InlineKeyboardButton("Help", callback_data="Help_msg"),
@@ -41,7 +41,7 @@ async def help_handler(_, event: Message):
 
     await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Search Here 🔍", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")],
+            [InlineKeyboardButton("Search Your Movie Here 🔍", switch_inline_query_current_chat="")],
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup"), 
              InlineKeyboardButton("About", callback_data="About_msg")]
@@ -64,7 +64,7 @@ async def inline_handlers(_, event: InlineQuery):
                     disable_web_page_preview=True
                 ),
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("Search Your Movies Here", switch_inline_query_current_chat="")],
+                    [InlineKeyboardButton("Search Your Movies Here 🔍", switch_inline_query_current_chat="")],
                     [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
                      InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
                     [InlineKeyboardButton("Report", url="https://t.me/RoyalKrrishna")]
@@ -149,8 +149,7 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
 					[
-						InlineKeyboardButton("Search Here 🔍", switch_inline_query_current_chat=""),
-						InlineKeyboardButton("Go Inline", switch_inline_query="")
+						InlineKeyboardButton("Search Your Movie Here 🔍", switch_inline_query_current_chat="")
 					],
                                         [
 						InlineKeyboardButton("Help", callback_data="Help_msg"),

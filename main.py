@@ -28,11 +28,11 @@ async def start_handler(_, event: Message):
 
     await event.reply_text(Config.START_MSG.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Search Here 🔍", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")],
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
             [InlineKeyboardButton("Help", callback_data="Help_msg"),
-             InlineKeyboardButton("About", callback_data="About_msg")],
-            [InlineKeyboardButton("Search Inline", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")]
+             InlineKeyboardButton("About", callback_data="About_msg")]
         ])
     )
 
@@ -41,10 +41,10 @@ async def help_handler(_, event: Message):
 
     await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Search Here 🔍", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")],
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup"), 
-             InlineKeyboardButton("About", callback_data="About_msg")],
-            [InlineKeyboardButton("Search Inline", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")]
+             InlineKeyboardButton("About", callback_data="About_msg")]
         ])
     )
 

@@ -149,16 +149,16 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
 					[
-						InlineKeyboardButton("Support", url="https://t.me/RoyalKrrishna"),
-						InlineKeyboardButton("Channel", url="https://t.me/iP_Movies")
+						InlineKeyboardButton("Search Inline 🔍", switch_inline_query_current_chat=""),
+						InlineKeyboardButton("Go Inline", switch_inline_query="")
 					],
                                         [
 						InlineKeyboardButton("Help", callback_data="Help_msg"),
 						InlineKeyboardButton("About", callback_data="About_msg")
 					],
 					[
-						InlineKeyboardButton("Search Inline 🔍", switch_inline_query_current_chat=""),
-						InlineKeyboardButton("Go Inline", switch_inline_query="")
+						InlineKeyboardButton("Support", url="https://t.me/RoyalKrrishna"),
+						InlineKeyboardButton("Channel", url="https://t.me/iP_Movies")
 					]
 				]
 			),

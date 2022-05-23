@@ -149,7 +149,7 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
 					[
-						InlineKeyboardButton("Search Inline 🔍", switch_inline_query_current_chat=""),
+						InlineKeyboardButton("Search Here 🔍", switch_inline_query_current_chat=""),
 						InlineKeyboardButton("Go Inline", switch_inline_query="")
 					],
                                         [

@@ -52,6 +52,11 @@ async def help_handler(_, event: Message):
 async def inline_handlers(_, event: InlineQuery):
     answers = list()
     # If Search Query is Empty
+else:
+
+        switch_pm_text = f'{emoji.CROSS_MARK} No results'
+        if string:
+            switch_pm_text += f' for "{string}"'
     if event.query == "":
         answers.append(
             InlineQueryResultArticle(

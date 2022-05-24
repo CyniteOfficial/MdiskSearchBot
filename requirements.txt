@@ -1,4 +1,4 @@
-pyrogram==1.4.16
+https://github.com/Mahesh0253/pyrogram/archive/inline.zip
 TgCrypto
 motor
 aiofiles

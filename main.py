@@ -86,7 +86,7 @@ async def inline_handlers(_, event: InlineQuery):
                     title="{}".format(f_text.split("\n", 1)[0]),
                     description="{}".format(f_text.split("\n", 2)[-1]),
                     thumb_url=thumb,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Search Again", switch_inline_query_current_chat=""), InlineKeyboardButton("Go Inline", switch_inline_query="")]]),
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Search Again 🔍", switch_inline_query_current_chat=""), InlineKeyboardButton("Report❗", url="https://t.me/RoyalKrrishna")]]),
                     input_message_content=InputTextMessageContent(
                         message_text=msg_text,
                         parse_mode="html",

@@ -36,7 +36,7 @@ If You Want Your Own Bot Like This Then You Can Contact Our Developer.</b>
 
 I'm Mdisk Search Robot.🤖</a>
 
-I Can Search!🔍 What You Want?😜
+I Can Search 🔍 What You Want❗
 
 <a>Made With ❤ By @RoyalKrrishna</a></b>
 """
@@ -47,7 +47,7 @@ I Can Search!🔍 What You Want?😜
 
 I'm Mdisk Search Robot.🤖</a>
 
-I Can Search!🔍 What You Want?😜
+I Can Search 🔍 What You Want❗
 
 <a>Made With ❤ By @RoyalKrrishna</a></b>
 """

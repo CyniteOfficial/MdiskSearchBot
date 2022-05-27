@@ -26,15 +26,14 @@ User = Client(
 
 @Bot.on_message(filters.private & filters.command("start"))
 async def start_handler(_, event: Message):
-    await event.reply_photo(
-    photo=f"https://telegra.ph/file/f35d8b79281781574e6f4.jpg",
+
     await event.reply_text(Config.START_MSG.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
             [InlineKeyboardButton("Help", callback_data="Help_msg"),
              InlineKeyboardButton("About", callback_data="About_msg")]
-        ]))
+        ])
     )
 
 @Bot.on_message(filters.private & filters.command("help"))

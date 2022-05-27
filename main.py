@@ -59,7 +59,7 @@ async def inline_handlers(_, event: Message):
             if "|||" in message.text:
                 f_text = message.text.split("|||", 1)[0]
                 msg_text = message.text.html.split("|||", 1)[0]
-            answers += f'**🍿 Title ➠** ' + ''** + f_text.split("\n", 1)[0] + **'' + '\n\n**📜 Description ➠ **' + ''** + f_text.split("\n", 2)[-1] + **' \n\n'
+            answers += f'**🍿 Title ➠** ' + '' + f_text.split("\n", 1)[0] + '' + '\n\n**📜 Description ➠ **' + '' + f_text.split("\n", 2)[-1] + ' \n\n'
     try:
         await event.reply_text(
             answers

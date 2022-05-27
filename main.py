@@ -29,7 +29,7 @@ async def inline_handlers(_, event: Message):
     if event.text == '/start':
         return
     answers = f'🍿 YOUR QUERY: `{event.text}` \n\n'
-    async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50, query=event.text):
+    async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=1, query=event.text):
         if message.text:
             string = message.text
             words = string.split('\n')

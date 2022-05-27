@@ -6,7 +6,6 @@ from pyrogram.errors import QueryIdInvalid
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InlineQuery, InlineQueryResultArticle, \
     InputTextMessageContent
 from TeamTeleRoid.forcesub import ForceSub
-import asyncio
 
 # Bot Client for Inline Search
 Bot = Client(
@@ -62,9 +61,12 @@ async def inline_handlers(_, event: Message):
                 msg_text = message.text.html.split("|||", 1)[0]
             answers += f'**🍿 Title ➠ ' + '' + f_text.split("\n", 1)[0] + '' + '\n\n📜 About ➠ ' + '' + f_text.split("\n", 2)[-1] + ' \n\n**'
     try:
-        msg = await event.reply_text(answers)
+        await event.reply_text(
+            answers
+        )
+        print(f"[{Config.BOT_SESSION_NAME}] - Answered Successfully - {event.from_user.first_name}")
         await asyncio.sleep(30)
-        await msg.delete()
+        await message.delete()
     except:
         print(f"[{Config.BOT_SESSION_NAME}] - Failed to Answer - {event.from_user.first_name}")
 

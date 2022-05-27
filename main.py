@@ -26,7 +26,7 @@ User = Client(
 
 @Bot.on_message(filters.private & filters.command("start"))
 async def start_handler(_, event: Message):
-    await message.reply_photo(
+    await event.reply_photo(
     photo=f"https://telegra.ph/file/f35d8b79281781574e6f4.jpg",
     await event.reply_text(Config.START_MSG.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([

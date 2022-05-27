@@ -6,7 +6,6 @@ from pyrogram.errors import QueryIdInvalid
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InlineQuery, InlineQueryResultArticle, \
     InputTextMessageContent
 from TeamTeleRoid.forcesub import ForceSub
-import asyncio
 
 # Bot Client for Inline Search
 Bot = Client(
@@ -23,9 +22,23 @@ User = Client(
     api_hash=Config.API_HASH
 )
 
+
 @Bot.on_message(filters.private & filters.command("start"))
 async def start_handler(_, event: Message):
-	await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
+
+    await event.reply_text(Config.START_MSG.format(event.from_user.mention),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
+             InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
+            [InlineKeyboardButton("Help", callback_data="Help_msg"),
+             InlineKeyboardButton("About", callback_data="About_msg")]
+        ])
+    )
+
+@Bot.on_message(filters.private & filters.command("help"))
+async def help_handler(_, event: Message):
+
+    await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup"), 
@@ -33,39 +46,28 @@ async def start_handler(_, event: Message):
         ])
     )
 
-
-
 @Bot.on_message(filters.incoming)
 async def inline_handlers(_, event: Message):
     if event.text == '/start':
         return
-    answers = f'🍿 YOUR QUERY: `{event.text}` \n\n'
-    async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=1, query=event.text):
+    answers = f'🍿Your Results: `{event.text}` \n\n\n'
+    async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50, query=event.text):
         if message.text:
-            string = message.text
-            words = string.split('\n')
-            words = [word for word in words if not '' == word]
-            words = [word for word in words if not '' == word]
-            title = words[0]
-            description = '\n'.join([desc for desc in words[1:] if '-' not in desc])
-            links = [link for link in words if '-' in link]
-            texts = [text.split(' - ')[0] for text in links]
-            jslinks = [link.split(' - ')[-1] for link in links]
-            buttons = []
-            for i in range(len(texts)):
-                button = [InlineKeyboardButton(texts[i], url=jslinks[i])]
-                buttons.append(button)
-            answers += f'**Title:** {title} \n\n**Description:**\n{description}'
+            thumb = None
+            f_text = message.text
+            msg_text = message.text.html
+            if "|||" in message.text:
+                f_text = message.text.split("|||", 1)[0]
+                msg_text = message.text.html.split("|||", 1)[0]
+            answers += f'Title: ' + '`' + f_text.split("\n", 1)[0] + '`' + '\n\nDescription: ' + '`' + f_text.split("\n", 2)[-1] + '` \n\n'
     try:
         await event.reply_text(
-            answers,
-            reply_markup=InlineKeyboardMarkup(buttons)
+            answers
         )
         print(f"[{Config.BOT_SESSION_NAME}] - Answered Successfully - {event.from_user.first_name}")
-        await asyncio.sleep(120)
-        await msg.delete()
     except:
         print(f"[{Config.BOT_SESSION_NAME}] - Failed to Answer - {event.from_user.first_name}")
+
 
 @Bot.on_callback_query()
 async def button(bot, cmd: CallbackQuery):

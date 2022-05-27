@@ -24,29 +24,6 @@ User = Client(
 )
 
 
-@Bot.on_message(filters.private & filters.command("start"))
-async def start_handler(_, event: Message):
-
-    await event.reply_text(Config.START_MSG.format(event.from_user.mention),
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
-             InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
-            [InlineKeyboardButton("Help", callback_data="Help_msg"),
-             InlineKeyboardButton("About", callback_data="About_msg")]
-        ])
-    )
-
-@Bot.on_message(filters.private & filters.command("help"))
-async def help_handler(_, event: Message):
-
-    await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
-        reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
-             InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup"), 
-             InlineKeyboardButton("About", callback_data="About_msg")]
-        ])
-    )
-
 @Bot.on_message(filters.incoming)
 async def inline_handlers(_, event: Message):
     if event.text == '/start':
@@ -74,7 +51,7 @@ async def inline_handlers(_, event: Message):
             reply_markup=InlineKeyboardMarkup(buttons)
         )
         print(f"[{Config.BOT_SESSION_NAME}] - Answered Successfully - {event.from_user.first_name}")
-	await asyncio.sleep(120)
+        await asyncio.sleep(120)
         await msg.delete()
     except:
         print(f"[{Config.BOT_SESSION_NAME}] - Failed to Answer - {event.from_user.first_name}")

@@ -28,7 +28,6 @@ async def start_handler(_, event: Message):
 
     await event.reply_text(Config.START_MSG.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Search Your Movie Here 🔍", switch_inline_query_current_chat="")],
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
             [InlineKeyboardButton("Help", callback_data="Help_msg"),
@@ -41,66 +40,32 @@ async def help_handler(_, event: Message):
 
     await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Search Your Movie Here 🔍", switch_inline_query_current_chat="")],
             [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
              InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup"), 
              InlineKeyboardButton("About", callback_data="About_msg")]
         ])
     )
 
-@Bot.on_inline_query()
-async def inline_handlers(_, event: InlineQuery):
-    answers = list()
-    # If Search Query is Empty
-
-    if event.query == "":
-        answers.append(
-            InlineQueryResultArticle(
-                title="This Is Mdisk Movie Search bot.🔍",
-                description="You Can Search All Movies Available On Mdisk.",
-                thumb_url="https://telegra.ph/file/2625b34c453088a8d687f.jpg", 
-                input_message_content=InputTextMessageContent(
-                    message_text="<b>Search Movie Name In Inline Mode Only.🔍\n\nOwner - @RoyalKrrishna</b></a>",
-
-                    disable_web_page_preview=True
-                ),
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("Search Your Movies Here 🔍", switch_inline_query_current_chat="")],
-                    [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
-                     InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")],
-                    [InlineKeyboardButton("Report", url="https://t.me/RoyalKrrishna")]
-                ])
-            )
-        )
-    # Search Channel Message using Search Query Words
-    else:
-        async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50, query=event.query):
-            if message.text:
-                thumb = None
-                f_text = message.text
-                msg_text = message.text.html
-                if "|||" in message.text:
-                    thumb = message.text.split("|||",1)[1].strip()
-                    f_text = message.text.split("|||",1)[0]
-                    msg_text = message.text.html.split("|||",1)[0]
-                answers.append(InlineQueryResultArticle(
-                    title="{}".format(f_text.split("\n", 1)[0]),
-                    description="{}".format(f_text.split("\n", 2)[-1]),
-                    thumb_url=thumb,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Search Again 🔍", switch_inline_query_current_chat=""), InlineKeyboardButton("Report❗", url="https://t.me/RoyalKrrishna")]]),
-                    input_message_content=InputTextMessageContent(
-                        message_text=msg_text,
-                        parse_mode="html",
-                        disable_web_page_preview=True
-                    )
-                ))
+@Bot.on_message(filters.incoming)
+async def inline_handlers(_, event: Message):
+    if event.text == '/start':
+        return
+    answers = f'YOUR QUERY: `{event.text}` \n\n\n'
+    async for message in User.search_messages(chat_id=Config.CHANNEL_ID, limit=50, query=event.query):
+        if message.text:
+            thumb = None
+            f_text = message.text
+            msg_text = message.text.html
+            if "|||" in message.text:
+                f_text = message.text.split("|||", 1)[0]
+                msg_text = message.text.html.split("|||", 1)[0]
+            answers += f'Title: `{f_text.split("\n", 1)[0]}` \nDescription: `{f_text.split("\n", 2)[-1]}`\n\n'
     try:
-        await event.answer(
-            results=answers,
-            cache_time=0
+        await event.reply_text(
+            answers
         )
         print(f"[{Config.BOT_SESSION_NAME}] - Answered Successfully - {event.from_user.first_name}")
-    except QueryIdInvalid:
+    except:
         print(f"[{Config.BOT_SESSION_NAME}] - Failed to Answer - {event.from_user.first_name}")
 
 
@@ -149,9 +114,6 @@ async def button(bot, cmd: CallbackQuery):
 			disable_web_page_preview=True,
 			reply_markup=InlineKeyboardMarkup(
 				[
-					[
-						InlineKeyboardButton("Search Your Movie Here 🔍", switch_inline_query_current_chat="")
-					],
                                         [
 						InlineKeyboardButton("Help", callback_data="Help_msg"),
 						InlineKeyboardButton("About", callback_data="About_msg")

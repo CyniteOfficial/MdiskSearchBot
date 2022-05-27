@@ -23,6 +23,17 @@ User = Client(
     api_hash=Config.API_HASH
 )
 
+@Bot.on_message(filters.private & filters.command("start"))
+async def start_handler(_, event: Message):
+	await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
+             InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup"), 
+             InlineKeyboardButton("About", callback_data="About_msg")]
+        ])
+    )
+
+
 
 @Bot.on_message(filters.incoming)
 async def inline_handlers(_, event: Message):

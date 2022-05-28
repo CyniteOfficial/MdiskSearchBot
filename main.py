@@ -60,7 +60,7 @@ async def inline_handlers(_, event: Message):
             answers += f'**🍿 Title ➠ ' + '' + f_text.split("\n", 1)[0] + '' + '\n\n📜 About ➠ ' + '' + f_text.split("\n", 2)[-1] + ' \n\n**'
     try:
         msg = await event.reply_text(answers)
-        await asyncio.sleep(30)
+        await asyncio.sleep(60)
         await msg.delete()
     except:
         print(f"[{Config.BOT_SESSION_NAME}] - Failed to Answer - {event.from_user.first_name}")

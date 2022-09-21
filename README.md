@@ -7,7 +7,7 @@ We have to use Bot for Inline Search & Userbot for Searching in Channels. So bot
 <details><summary><b>Deploy to Heroku</b></summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/RoyalKrrishna/MdiskWalaBot">
+<a href="https://heroku.com/deploy?template=https://github.com/Cyniteofficial/MdiskSearchBot">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>

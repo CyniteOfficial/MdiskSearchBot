@@ -25,4 +25,4 @@ We have to use Bot for Inline Search & Userbot for Searching in Channels. So bot
 </p>
 </details>
 
-Credits - @RoyalKrrishna
+Credits :- @RoyalKrrishna

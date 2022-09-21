@@ -24,3 +24,5 @@ We have to use Bot for Inline Search & Userbot for Searching in Channels. So bot
   </a>
 </p>
 </details>
+
+Credits - @RoyalKrrishna

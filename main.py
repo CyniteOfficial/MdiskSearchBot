@@ -81,7 +81,7 @@ async def button(bot, cmd: CallbackQuery):
 						InlineKeyboardButton("Join", url="https://t.me/Technicalcynite")
 					],
 					[
-						InlineKeyboardButton("Developer", url="https://t.me/cyniteofficial"),
+						InlineKeyboardButton("Creator", url="https://t.me/cyniteofficial"),
 						InlineKeyboardButton("Home", callback_data="gohome")
 					]
 				]

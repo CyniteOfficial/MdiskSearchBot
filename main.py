@@ -77,11 +77,11 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
 					[
-						InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
-						InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup")
+						InlineKeyboardButton("Our Channel", url="https://t.me/cyniteMovies"),
+						InlineKeyboardButton("Join", url="https://t.me/Technicalcynite")
 					],
 					[
-						InlineKeyboardButton("Developer", url="https://t.me/RoyalKrrishna"),
+						InlineKeyboardButton("Developer", url="https://t.me/cyniteofficial"),
 						InlineKeyboardButton("Home", callback_data="gohome")
 					]
 				]
@@ -96,10 +96,10 @@ async def button(bot, cmd: CallbackQuery):
 				[
 					[
 						InlineKeyboardButton("About", callback_data="About_msg"),
-						InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies")
+						InlineKeyboardButton("Our Channel", url="https://t.me/cyniteMovies")
 					], 
                                         [
-						InlineKeyboardButton("Owner", url="https://t.me/RoyalKrrishna"),
+						InlineKeyboardButton("Owner", url="https://t.me/cyniteofficial"),
 						InlineKeyboardButton("Home", callback_data="gohome")
 					]
 				]
@@ -117,8 +117,8 @@ async def button(bot, cmd: CallbackQuery):
 						InlineKeyboardButton("About", callback_data="About_msg")
 					],
 					[
-						InlineKeyboardButton("Support", url="https://t.me/RoyalKrrishna"),
-						InlineKeyboardButton("Channel", url="https://t.me/iP_Movies")
+						InlineKeyboardButton("Support", url="https://t.me/cyniteofficial"),
+						InlineKeyboardButton("Channel", url="https://t.me/cynitemovies")
 					]
 				]
 			),

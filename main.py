@@ -28,8 +28,8 @@ async def start_handler(_, event: Message):
 	await event.reply_photo("https://telegra.ph/file/156765a70757013b61d9c.jpg",
                                 caption=Config.START_MSG.format(event.from_user.mention),
                                 reply_markup=InlineKeyboardMarkup([
-                                    [InlineKeyboardButton("Our Channel ✅", url="https://t.me/IPopcornchannel"),
-                                     InlineKeyboardButton("Our Group ✅", url="https://t.me/iPopcornGroup")],
+                                    [InlineKeyboardButton("Our Channel 🍿", url="https://t.me/IPopcornchannel"),
+                                     InlineKeyboardButton("Our Group 🍿", url="https://t.me/iPopcornGroup")],
                                     [InlineKeyboardButton("Help 😣", callback_data="Help_msg"),
                                      InlineKeyboardButton("About ✅", callback_data="About_msg")]]))
 
@@ -38,8 +38,8 @@ async def help_handler(_, event: Message):
 
     await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Our Channel ✅", url="https://t.me/IPopcornchannel"),
-             InlineKeyboardButton("Our Group ✅", url="https://t.me/iPopcornGroup"), 
+            [InlineKeyboardButton("Our Channel 🍿", url="https://t.me/IPopcornchannel"),
+             InlineKeyboardButton("Our Group 🍿", url="https://t.me/iPopcornGroup"), 
              InlineKeyboardButton("About ✅", callback_data="About_msg")]
         ])
     )
@@ -77,8 +77,8 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
 					[
-						InlineKeyboardButton("Our Channe ✅l", url="https://t.me/IPopcornchannel"),
-						InlineKeyboardButton("Join Group ✅", url="https://t.me/iPopcornGroup")
+						InlineKeyboardButton("Our Channe 🍿", url="https://t.me/IPopcornchannel"),
+						InlineKeyboardButton("Join Group 🍿", url="https://t.me/iPopcornGroup")
 					],
 					[
 						InlineKeyboardButton("Creator 🕵️‍♂️", url="https://t.me/Jayesh_Rajput1"),
@@ -96,7 +96,7 @@ async def button(bot, cmd: CallbackQuery):
 				[
 					[
 						InlineKeyboardButton("About ✅", callback_data="About_msg"),
-						InlineKeyboardButton("Our Channel ✅", url="https://t.me/IPopcornchannel")
+						InlineKeyboardButton("Our Channel 🍿", url="https://t.me/IPopcornchannel")
 					], 
                                         [
 						InlineKeyboardButton("Owner 🕵️‍♂️", url="https://t.me/Jayesh_Rajput1"),

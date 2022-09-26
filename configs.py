@@ -15,7 +15,7 @@ class Config(object):
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
     ABOUT_BOT_TEXT = """<b>This is Mdisk Search Bot.
 
-🤖 My Name: <a href='https://t.me/Mdisk_V3_bot'>Mdisk Search Robot</a>
+🤖 My Name: <a href='https://t.me/IPopcornSearch_bot'>I Popcorn Search Movie Bot</a>
 
 📝 Language : <a href='https://www.python.org'> Python V3</a>
 
@@ -23,7 +23,7 @@ class Config(object):
 
 📡 Server: <a href='https://heroku.com'>Heroku</a>
 
-👨‍💻 Created By: <a href='https://t.me/Jayesh_Rajput1'>Cynite</a></b>
+👨‍💻 Created By: <a href='https://t.me/Jayesh_Rajput1'>Jayesh</a></b>
 """
 
     ABOUT_HELP_TEXT = """<b>👨‍💻 Developer : <a href='https://t.me/Jayesh_Rajput1'>Click Me</a>
@@ -34,7 +34,7 @@ If You Want Your Own Bot Like This Then You Can Contact Our Developer.</b>
     HOME_TEXT = """
 <b>Hey! {}😅,
 
-I'm Mdisk Search Robot.🤖</a>
+I'm I Popcorn Search Movie Bot.🤖</a>
 
 I Can Search 🔍 What You Want❗
 
@@ -45,7 +45,7 @@ I Can Search 🔍 What You Want❗
     START_MSG = """
 <b>Hey! {}😅,
 
-I'm Mdisk Search Robot.🤖</a>
+I'm I Popcorn Search Movie Bot.🤖</a>
 
 I Can Search 🔍 What You Want❗
 

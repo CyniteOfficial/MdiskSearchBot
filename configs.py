@@ -4,12 +4,12 @@ import os
 
 
 class Config(object):
-    API_ID = int(os.environ.get("API_ID", 12345))
-    API_HASH = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
+    API_ID = int(os.environ.get("API_ID", “11484651”))
+    API_HASH = os.environ.get("API_HASH", "9d058bf3591ddba2870ea61836571eae")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "5765769840:AAF3X6xQ6Hr15CR6rk4pG4Ymi2VaeVO14T0")
     BOT_SESSION_NAME = os.environ.get("BOT_SESSION_NAME", "MdiskSearchBot")
     USER_SESSION_STRING = os.environ.get("USER_SESSION_STRING", "")
-    CHANNEL_ID = int(os.environ.get("CHANNEL_ID", -100))
+    CHANNEL_ID = int(os.environ.get("CHANNEL_ID", -1001144412978))
     BOT_USERNAME = os.environ.get("BOT_USERNAME")
     BOT_OWNER = int(os.environ.get("BOT_OWNER"))
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)

@@ -25,22 +25,22 @@ User = Client(
 
 @Bot.on_message(filters.private & filters.command("start"))
 async def start_handler(_, event: Message):
-	await event.reply_photo("https://telegra.ph/file/165941ae764a56d6d9c89.jpg",
+	await event.reply_photo("https://telegra.ph/file/0c8a9bb6d36c3c071dbee.jpg",
                                 caption=Config.START_MSG.format(event.from_user.mention),
                                 reply_markup=InlineKeyboardMarkup([
-                                    [InlineKeyboardButton("Our Channel", url="https://t.me/cynitemovies"),
-                                     InlineKeyboardButton("Creator", url="https://t.me/Cyniteofficial")],
-                                    [InlineKeyboardButton("Help", callback_data="Help_msg"),
-                                     InlineKeyboardButton("About", callback_data="About_msg")]]))
+                                    [InlineKeyboardButton("Our Channel 🍿", url="https://t.me/IPopcornchannel"),
+                                     InlineKeyboardButton("Our Group 🍿", url="https://t.me/iPopcornGroup")],
+                                    [InlineKeyboardButton("Help 😣", callback_data="Help_msg"),
+                                     InlineKeyboardButton("About ✅", callback_data="About_msg")]]))
 
 @Bot.on_message(filters.private & filters.command("help"))
 async def help_handler(_, event: Message):
 
     await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("Our Channel", url="https://t.me/iP_Movies"),
-             InlineKeyboardButton("Our Group", url="https://t.me/iPopcornMovieGroup"), 
-             InlineKeyboardButton("About", callback_data="About_msg")]
+            [InlineKeyboardButton("Our Channel 🍿", url="https://t.me/IPopcornchannel"),
+             InlineKeyboardButton("Our Group 🍿", url="https://t.me/iPopcornGroup"), 
+             InlineKeyboardButton("About ✅", callback_data="About_msg")]
         ])
     )
 
@@ -77,12 +77,12 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
 					[
-						InlineKeyboardButton("Our Channel", url="https://t.me/cyniteMovies"),
-						InlineKeyboardButton("Join", url="https://t.me/Technicalcynite")
+						InlineKeyboardButton("Our Channe 🍿", url="https://t.me/IPopcornchannel"),
+						InlineKeyboardButton("Join Group 🍿", url="https://t.me/iPopcornGroup")
 					],
 					[
-						InlineKeyboardButton("Creator", url="https://t.me/cyniteofficial"),
-						InlineKeyboardButton("Home", callback_data="gohome")
+						InlineKeyboardButton("Creator 🕵️‍♂️", url="https://t.me/Jayesh_Rajput1"),
+						InlineKeyboardButton("Home 🏠", callback_data="gohome")
 					]
 				]
 			),
@@ -95,12 +95,12 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
 					[
-						InlineKeyboardButton("About", callback_data="About_msg"),
-						InlineKeyboardButton("Our Channel", url="https://t.me/cyniteMovies")
+						InlineKeyboardButton("About ✅", callback_data="About_msg"),
+						InlineKeyboardButton("Our Channel 🍿", url="https://t.me/IPopcornchannel")
 					], 
                                         [
-						InlineKeyboardButton("Owner", url="https://t.me/cyniteofficial"),
-						InlineKeyboardButton("Home", callback_data="gohome")
+						InlineKeyboardButton("Owner 🕵️‍♂️", url="https://t.me/Jayesh_Rajput1"),
+						InlineKeyboardButton("Home ✅", callback_data="gohome")
 					]
 				]
 			),
@@ -113,12 +113,12 @@ async def button(bot, cmd: CallbackQuery):
 			reply_markup=InlineKeyboardMarkup(
 				[
                                         [
-						InlineKeyboardButton("Help", callback_data="Help_msg"),
-						InlineKeyboardButton("About", callback_data="About_msg")
+						InlineKeyboardButton("Help 😣", callback_data="Help_msg"),
+						InlineKeyboardButton("About ✅", callback_data="About_msg")
 					],
 					[
-						InlineKeyboardButton("Support", url="https://t.me/cyniteofficial"),
-						InlineKeyboardButton("Channel", url="https://t.me/cynitemovies")
+						InlineKeyboardButton("Support ✅", url="https://t.me/Jayesh_Rajput1"),
+						InlineKeyboardButton("Channel ✅", url="https://t.me/IPopcornchannel")
 					]
 				]
 			),

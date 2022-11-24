@@ -49,7 +49,7 @@ I'm Mdisk Search Robot.🤖</a>
 
 I Can Search 🔍 What You Want❗
 
-<a>Made With ❤ By @Cyniteofficial</a></b>
+<a>Made With ❤ By @Govind_rawat921</a></b>
 """
 
 

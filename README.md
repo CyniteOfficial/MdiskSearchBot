@@ -7,7 +7,7 @@ We have to use Bot for Inline Search & Userbot for Searching in Channels. So bot
 <details><summary><b>Deploy to Heroku</b></summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/Cyniteofficial/MdiskSearchBot">
+<a href="https://heroku.com/deploy?template=https://github.com/Etchial/MdiskSearchBot">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
@@ -25,4 +25,8 @@ We have to use Bot for Inline Search & Userbot for Searching in Channels. So bot
 </p>
 </details>
 
-Credits :- @RoyalKrrishna
+<a href="https://deploy.cyclic.sh/GH_LOGIN/GH_REPO">
+    <img src="https://deploy.cyclic.sh/button.svg" />
+</a>
+
+Credits :- @Ethcial_hacker
